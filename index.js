@@ -25,6 +25,7 @@ async function weatherApiCall(loc) {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${loc}&APPID=6fbd3255777a4f59edf86970a79b99ec`, { mode: 'cors' });
         const weatherData = await response.json();
+        console.log(weatherData);
         if(response.status == 404){
             alert(weatherData.message);
             inputValue.value='';
